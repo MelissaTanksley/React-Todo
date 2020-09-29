@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Todo = (props) => {
-    const { todo } = props;
-    console.log('todo', todo);
+
+class Todo extends React.Component {
+  render() {
+    const { id, className, handleComplete, todo } = this.props;
     return (
-      <div className="todo">
-        {todo.map(list => { return <p>{list}</p> })}
+      <div id={id} className={className}>
+        <h3 id={id} onClick={e => handleComplete(e)}>
+          {todo.input}
+        </h3>
       </div>
-    )
-  
-}
+    );
+}}
 
 export default Todo; 

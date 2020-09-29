@@ -1,0 +1,36 @@
+*,
+html,
+body {
+  box-sizing: border-box;
+}
+
+
+.todoCard h3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.todoCard:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: transform 100ms ease-out;
+} 
+
+.todoCard {
+
+    border-left: 4px purple solid;
+	height: 70px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	box-shadow: 2px 2px 10px #ececec;
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 9px;
+	transform: scale(1);
+	transition: transform 100ms ease-out;
+}

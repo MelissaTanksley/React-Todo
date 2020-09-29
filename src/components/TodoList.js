@@ -1,19 +1,28 @@
-import React from 'react';
-import Todo from './Todo'
+import React from 'react'
+import Todo from 'todo'
+import Index from 'index'
 
-const Todo = (props) => {
-    console.log('todo', todo);
-    return (
-      <div className="todo">
-        {todo.map(list => { return <p>{list}</p> })}
-        {todo.map(list => {
-          return (
-            <div onClick={e => props.handleComplete(e)}>
-              <p >{list}</p>
-            </div>
-          )
-        })}
+   class TodoList extends React.Component {
+    render() {
+      const { todo, complete, handleComplete } = this.props;
+      return (
+      <div className="todoListContainer">
+        {todo.map(task => (
+          <>
+            {console.log(task.className)}
+            <Todo
+              className={task.complete ? "todoCard completed" : "todoCard"}
+              id={task.id}
+              todo={task}
+              complete={complete}
+              handleComplete={handleComplete}
+            />
+          </>
+        ))}
       </div>
-    )
+    );
+  }
 }
+  
+
 export default TodoList;
